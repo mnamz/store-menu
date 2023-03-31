@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>AdminLTE Blank Page</title>
+	<title>Dronecare</title>
 
 	<!-- AdminLTE CSS -->
 	<link rel="stylesheet" href="node_modules/admin-lte/dist/css/adminlte.min.css">
