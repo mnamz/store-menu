@@ -150,7 +150,6 @@ a {
 
 .product-desc p {
     margin-bottom: 2%;
-
     text-align: center;
     font-size: .8em;
 }
@@ -163,15 +162,14 @@ a {
 
 .item-button {
     padding: .6em 1.6em;
-
     background-color: #005de9;
     border-radius: 25px;
-
     transition: .6s;
 }
 
 .item-button:hover {
     box-shadow: 0 .1em 1em .1em #003b91;
+    color: #fff;
 }
 
 .product-desc a {
