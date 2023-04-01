@@ -16,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $image = $_FILES["image"]["name"]; // Get the image file name
     $imagePath = "../uploads/" . $image; // Set the image upload path
 
-    
     try {
         if (empty($id)) {
             $sql = "INSERT INTO products (name, description, price, image, category_id, subcategory_id) VALUES (:name, :description, :price, :image, :category_id, :subcategory_id)";
