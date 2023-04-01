@@ -19,9 +19,9 @@ foreach ($products as $product) :
             <a href="#more">
                 <h5 class="product-desc__title"><?= $product['name']; ?></h5>
             </a>
-            <p class="product-desc__text"><?= $product['description']; ?></p>
+            <p class="product-desc__text"><?= $product['price']; ?></p>
         </section>
-        <div class="wrap-item-button view-product" data-id="<?= $product['id']; ?>"><a href="#more" class="item-button">More</a></div>
+        <div class="wrap-item-button view-product" data-id="<?= $product['id']; ?>"><a href="#more" class="item-button">View</a></div>
     </article>
 <?php
 endforeach;
