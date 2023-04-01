@@ -18,5 +18,7 @@ jobs:
         ssh-keyscan -H 93.92.112.92 > ~/.ssh/known_hosts
     - name: connect and pull
       run: ssh admin@93.92.112.92 "cd /var/www/dronecaremy.com && git checkout master && git pull && exit"
+    - name: npm
+      run: npm install
     - name: cleanup
       run: rm -rf ~/.ssh
