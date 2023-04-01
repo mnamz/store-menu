@@ -11,7 +11,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Deploy to server
-        uses: easingthemes/ssh-deploy@v2.2.13
+        uses: easingthemes/ssh-deploy@v2.2.4
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           ssh-public-key: ${{ secrets.SSH_PUBLIC_KEY }}
