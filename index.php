@@ -72,8 +72,11 @@ if ($category_id !== 'All') {
     <section class="container-products-item">
         <!-- item will display here -->
     </section>
+    <button id="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
 
 </section>
+
+
 <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -89,7 +92,23 @@ if ($category_id !== 'All') {
         </div>
     </div>
 </div>
+<style>
+    #scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 15px;
+        border-radius: 50%;
+        font-size: 18px;
+    }
 
+    #scroll-to-top:hover {
+        cursor: pointer;
+    }
+</style>
 <!-- jQuery -->
 <link rel="stylesheet" href="assets/css/menu.css">
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
@@ -98,5 +117,23 @@ if ($category_id !== 'All') {
 <script>
     $('.modal-header').on('click', function() {
         $('#productModal').modal('hide');
+    });
+    $(document).ready(function() {
+        // Show/hide the button based on scroll position
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 100) {
+                $('#scroll-to-top').fadeIn();
+            } else {
+                $('#scroll-to-top').fadeOut();
+            }
+        });
+
+        // Scroll to top when the button is clicked
+        $('#scroll-to-top').click(function() {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
     });
 </script>
