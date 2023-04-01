@@ -26,7 +26,7 @@ if ($category_id !== 'All') {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dronecare</title>
 
-    
+
     <link rel="stylesheet" href="node_modules/admin-lte/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css">
@@ -74,7 +74,6 @@ if ($category_id !== 'All') {
     </section>
 
 </section>
-
 <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -90,13 +89,14 @@ if ($category_id !== 'All') {
         </div>
     </div>
 </div>
+
 <!-- jQuery -->
 <link rel="stylesheet" href="assets/css/menu.css">
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="assets/js/menu.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
-<style>
-    
-</style>
-
+<script>
+    $('.modal-header').on('click', function() {
+        $('#productModal').modal('hide');
+    });
+</script>
