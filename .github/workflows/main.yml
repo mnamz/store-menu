@@ -17,8 +17,6 @@ jobs:
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
         ssh-keyscan -H 93.92.112.92 > ~/.ssh/known_hosts
     - name: connect and pull
-      run: ssh admin@93.92.112.92 "cd /var/www/dronecaremy.com && git checkout master && git pull && exit"
-    - name: npm
-      run: npm install
+      run: ssh admin@93.92.112.92 "cd /var/www/dronecaremy.com && git checkout master && git pull && npm install && exit"
     - name: cleanup
       run: rm -rf ~/.ssh
