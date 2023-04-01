@@ -20,3 +20,4 @@ jobs:
       run: ssh admin@93.92.112.92 "cd /var/www/dronecaremy.com && git checkout master && git pull && npm install && exit"
     - name: cleanup
       run: rm -rf ~/.ssh
+      # i dont care if u know the site and ip

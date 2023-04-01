@@ -28,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 "category_id" => $category_id,
                 "subcategory_id" => $subcategory_id,
             ]);
+            move_uploaded_file($_FILES["image"]["tmp_name"], $imagePath);
         } else {
             if (!empty($image)) {
                 $sql = "UPDATE products SET name = :name, description = :description, price = :price, image = :image, category_id = :category_id, subcategory_id = :subcategory_id WHERE id = :id";

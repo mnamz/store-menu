@@ -88,21 +88,23 @@ $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <!-- Table -->
                 <div class="col-md-6">
                     <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">List</h5>
-                            <table class="table" id="product-list">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Price</th>
-                                        <th>Description</th>
-                                        <th>Image</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
+                        <div class="card-body" style="overflow-x: auto;">
+                            <h5 class="card-title border-bottom mb-4">List</h5>
+                            <div class="table-body" >
+                                <table class="table" id="product-list">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Price</th>
+                                            <th>Description</th>
+                                            <th>Image</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -118,6 +120,10 @@ $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $(document).ready(function() {
         fetchData();
         $("#cancelBtn").hide();
+        if ($('#image-preview').attr('src') == '') {
+            $('#image-preview').hide();
+        }
+
     });
 
     // Create
@@ -151,6 +157,7 @@ $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     $('#form-title').text('Add');
                     $("#cancelBtn").hide();
                     $("#subcategory").empty();
+                    $('#image-preview').hide();
                     // Add a default option
                     $("#subcategory").append("<option value=''>Select a subcategory</option>");
                 } else {
@@ -187,6 +194,7 @@ $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 $("#form-header").removeClass("card-success").addClass("card-warning");
                 $('#form-title').text('Edit');
                 $("#cancelBtn").show();
+                $('#image-preview').show();
                 // Get subcategories for the selected category
                 $.ajax({
                     url: "category/get_subcategories.php",
@@ -202,7 +210,7 @@ $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         $("#subcategory").append("<option value=''>Select a subcategory</option>");
                         // Add options for each subcategory
                         $.each(subcategories, function(index, subcategory) {
-                            if(data.subcategory_id === subcategory.id){
+                            if (data.subcategory_id === subcategory.id) {
                                 $("#subcategory").append("<option selected value='" + subcategory.id + "'>" + subcategory.name + "</option>");
                             } else {
                                 $("#subcategory").append("<option value='" + subcategory.id + "'>" + subcategory.name + "</option>");
@@ -226,6 +234,7 @@ $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $("#form-header").removeClass("card-warning").addClass("card-success");
         $('#form-title').text('Add');
         $("#cancelBtn").hide();
+        $('#image-preview').hide();
     });
 
 

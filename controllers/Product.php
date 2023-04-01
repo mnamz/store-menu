@@ -4,7 +4,7 @@ class Product {
     private static $pdo;
     
     public static function init() {
-        include_once '../db.php';
+        include_once dirname(__DIR__) . '/db.php';
         self::$pdo = $pdo;
     }
     
