@@ -15,7 +15,7 @@ jobs:
       run: |
         install -m 600 -D /dev/null ~/.ssh/id_rsa
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-        ssh-keyscan -H admin@93.92.112.92 > ~/.ssh/known_hosts
+        ssh-keyscan -H 93.92.112.92 > ~/.ssh/known_hosts
     - name: connect and pull
       run: ssh admin@93.92.112.92 "cd /var/www/dronecaremy.com && git checkout master && git pull && exit"
     - name: cleanup
