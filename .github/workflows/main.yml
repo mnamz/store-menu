@@ -4,19 +4,19 @@ on:
     branches:
       - master
 jobs:
-  deploy:
+  run_pull:
+    name: run pull
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@v3
-      - name: Install dependencies
-        run: npm install
-      - name: Deploy to production
-        uses: easingthemes/ssh-deploy@v2.2.4
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          SSH_PUBLIC_KEY: ${{ secrets.SSH_PUBLIC_KEY }}
-          ARGS: "-rltgoDzvO --delete"
-          SOURCE: "build/"
-          REMOTE_HOST: 93.92.112.92
-          REMOTE_USER: admin
-          REMOTE_PATH: "/var/www/dronecaremy.com"
+    - name: install ssh keys
+      # check this thread to understand why its needed:
+      # https://stackoverflow.com/a/70447517
+      run: |
+        install -m 600 -D /dev/null ~/.ssh/id_rsa
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        ssh-keyscan -H admin@93.92.112.92 > ~/.ssh/known_hosts
+    - name: connect and pull
+      run: ssh admin@93.92.112.92 "cd /var/www/dronecaremy.com && git checkout master && git pull && exit"
+    - name: cleanup
+      run: rm -rf ~/.ssh
