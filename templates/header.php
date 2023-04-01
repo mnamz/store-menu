@@ -79,7 +79,7 @@ include_once 'db.php';
 
 						<!-- Menu List -->
 						<li class="nav-item">
-							<a href="menu-new.php" class="nav-link">
+							<a href="/" class="nav-link">
 								<i class="nav-icon fas fa-bars"></i>
 								<p>Menu List</p>
 							</a>
