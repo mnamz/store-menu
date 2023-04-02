@@ -37,6 +37,12 @@ class Product {
         $stmt->execute([$category_id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public static function getLatestProducts() {
+        $stmt = self::$pdo->prepare("SELECT * FROM products ORDER BY created_at DESC LIMIT 3");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 
 Product::init();

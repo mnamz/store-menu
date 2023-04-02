@@ -86,6 +86,13 @@ a {
     align-items: flex-start;
 }
 
+.container-products-latest {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 2%;
+    align-items: flex-start;
+}
+
 /* For mobile devices with a maximum width of 768px */
 @media (max-width: 425px) {
     .container-products-item {
@@ -95,6 +102,13 @@ a {
     }
 }
 
+@media (max-width: 425px) {
+    .container-products-latest {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+    }
+}
 
 .products__item {
     width: 33.33%;

@@ -66,12 +66,11 @@ if ($category_id !== 'All') {
             </div>
         </div>
     </nav>
+        <div class="container-products-<?= isset($_GET['category_id']) ? 'item' : 'latest' ?>">
 
-
-
-    <section class="container-products-item">
-        <!-- item will display here -->
-    </section>
+        </div>
+        
+      
     <button id="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
 
 </section>
@@ -112,8 +111,9 @@ if ($category_id !== 'All') {
 <!-- jQuery -->
 <link rel="stylesheet" href="assets/css/menu.css">
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
-<script src="assets/js/menu.js"></script>
+
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="assets/js/menu.js"></script>
 <script>
     $('.modal-header').on('click', function() {
         $('#productModal').modal('hide');
