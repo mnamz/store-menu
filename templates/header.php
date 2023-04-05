@@ -47,7 +47,7 @@ include_once 'db.php';
 						data-accordion="false">
 						<!-- Dashboard -->
 						<li class="nav-item">
-							<a href="#" class="nav-link">
+							<a href="dashboard.php" class="nav-link">
 								<i class="nav-icon fas fa-th"></i>
 								<p>Dashboard</p>
 							</a>
@@ -55,7 +55,7 @@ include_once 'db.php';
 
 						<!-- Users -->
 						<li class="nav-item">
-							<a href="#" class="nav-link">
+							<a href="users.php" class="nav-link">
 								<i class="nav-icon fas fa-users"></i>
 								<p>Users</p>
 							</a>

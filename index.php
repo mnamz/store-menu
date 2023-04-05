@@ -66,12 +66,24 @@ if ($category_id !== 'All') {
             </div>
         </div>
     </nav>
+    <div class="container-products-header">
+        <h2 class="container-products-title"><?= !isset($_GET['category_id']) ? 'Latest' : 'All' ?> Products</h2>
+    </div>
+    <div class="container-products-<?= isset($_GET['category_id']) ? 'item' : 'latest' ?>">
+
+    </div>
+    <?php if(!isset($_GET['category_id'])) : ?>
+    <hr>
+    <div class="container-products-header">
+        <h2 class="container-products-title">All Products</h2>
+    </div>
+    <div class="container-products-item">
+        <!-- product items go here -->
+    </div>
+    <?php endif; ?>
 
 
 
-    <section class="container-products-item">
-        <!-- item will display here -->
-    </section>
     <button id="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
 
 </section>
@@ -108,12 +120,23 @@ if ($category_id !== 'All') {
     #scroll-to-top:hover {
         cursor: pointer;
     }
+
+    .container-products-header {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    .container-products-title {
+        text-align: center;
+    }
 </style>
 <!-- jQuery -->
 <link rel="stylesheet" href="assets/css/menu.css">
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
-<script src="assets/js/menu.js"></script>
+
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="assets/js/menu.js"></script>
 <script>
     $('.modal-header').on('click', function() {
         $('#productModal').modal('hide');
