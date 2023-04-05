@@ -37,7 +37,7 @@ if ($category_id !== 'All') {
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<section class="products">
+<section class="about">
 
     <section class="products__header mt-4">
         <a onclick='location.href = window.location.pathname;'><img src="dronecare.jpg" alt="Logo" class="header-logo" style="max-height: 100px;"></a>
@@ -62,28 +62,45 @@ if ($category_id !== 'All') {
                             <a class='nav-link px-3 <?= isset($_GET['category_id']) ? "user-select-none" : "" ?>' data-id="<?= $subcategory['id']; ?>" <?= !isset($_GET['category_id']) ? "href='?category_id=" . $subcategory['id'] . "'" : "" ?>><?= $subcategory['name']; ?></a>
                         </li>
                     <?php endforeach; ?>
-                    <li class="nav-item">
-                        <a class='nav-link px-3 <?= ($_SERVER['REQUEST_URI'] === '/about.php') ? "user-select-none" : "" ?>' href='about.php'>About</a>
-                    </li>
+                    <?php if (!isset($_GET['category_id'])) : ?>
+                        <li class="nav-item">
+                            <a class='nav-link px-3 <?= ($_SERVER['REQUEST_URI'] == "/about.php") ? "hover" : "" ?>' href='about.php'>About Us</a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="container-products-header">
-        <h2 class="container-products-title"><?= !isset($_GET['category_id']) ? 'Latest' : 'All' ?> Products</h2>
-    </div>
-    <div class="container-products-<?= isset($_GET['category_id']) ? 'item' : 'latest' ?>">
+    <section class="information">
+        <div class="container">
+            <h3 class="container-products-header">Dronecare Puchong</h3>
+            <address>(Retail & Service Center) Monday - Saturday (11am-7pm) <br>
+                No 57A, Jalan PU 7/4, Taman Puchong Utama, 47100 Puchong, Selangor, Malaysia. <br>
+                https://waze.com/ul/hw28302dft <br>
+            </address>
 
-    </div>
-    <?php if (!isset($_GET['category_id'])) : ?>
-        <hr>
-        <div class="container-products-header">
-            <h2 class="container-products-title">All Products</h2>
+            <h3 class="container-products-header">Drone Care (Setapak)</h3>
+            <address>(Retail) Monday - Saturday (12pm-8pm) <br>
+                Platinum Walk, Block E-65-1, No 2, Jalan Langkawi, 53300 Wilayah Persekutuan Kuala Lumpur, Malaysia. <br>
+                https://waze.com/ul/hw2864xv89 <br>
+            </address>
+
+            <p>Park basement, find block E Lift, then level 1. Once get out from lift turn left then right. TQ</p>
+
+            📲Steven Liew
+            <address>
+            +601162303363 <br>
+            Whatapps: <a style="color:black" href='https://api.whatsapp.com/send?phone=601162303363'>Click here</a> <br>
+            </address>
+
+            📲Brandon Foo
+            <address>
+            +601115555520 <br>
+            Whatapps: <a style="color:black" href='https://api.whatsapp.com/send?phone=601115555520'>Click here</a> <br>
+            </address>
         </div>
-        <div class="container-products-item">
-            <!-- product items go here -->
-        </div>
-    <?php endif; ?>
+    </section>
+
 
 
 
@@ -91,22 +108,6 @@ if ($category_id !== 'All') {
 
 </section>
 
-
-<div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="productModalLabel">Product Information</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div id="product-info"></div>
-            </div>
-        </div>
-    </div>
-</div>
 <style>
     #scroll-to-top {
         position: fixed;
