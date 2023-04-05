@@ -66,11 +66,24 @@ if ($category_id !== 'All') {
             </div>
         </div>
     </nav>
-        <div class="container-products-<?= isset($_GET['category_id']) ? 'item' : 'latest' ?>">
+    <div class="container-products-header">
+        <h2 class="container-products-title"><?= !isset($_GET['category_id']) ? 'Latest' : 'All' ?> Products</h2>
+    </div>
+    <div class="container-products-<?= isset($_GET['category_id']) ? 'item' : 'latest' ?>">
 
-        </div>
-        
-      
+    </div>
+    <?php if(!isset($_GET['category_id'])) : ?>
+    <hr>
+    <div class="container-products-header">
+        <h2 class="container-products-title">All Products</h2>
+    </div>
+    <div class="container-products-item">
+        <!-- product items go here -->
+    </div>
+    <?php endif; ?>
+
+
+
     <button id="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
 
 </section>
@@ -106,6 +119,16 @@ if ($category_id !== 'All') {
 
     #scroll-to-top:hover {
         cursor: pointer;
+    }
+
+    .container-products-header {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    .container-products-title {
+        text-align: center;
     }
 </style>
 <!-- jQuery -->
