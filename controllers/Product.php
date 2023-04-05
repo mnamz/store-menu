@@ -14,6 +14,12 @@ class Product {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public static function countProducts() {
+        $stmt = self::$pdo->prepare("SELECT COUNT(*) FROM products");
+        $stmt->execute();
+        return $stmt->fetchColumn();
+    }    
+
     public static function getProduct($id) {
         $stmt = self::$pdo->prepare("SELECT * FROM products WHERE id = ?");
         $stmt->execute([$id]);
