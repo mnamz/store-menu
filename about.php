@@ -40,7 +40,7 @@ if ($category_id !== 'All') {
 <section class="about">
 
     <section class="products__header mt-4">
-        <a onclick='location.href = window.location.pathname;'><img src="dronecare.jpg" alt="Logo" class="header-logo" style="max-height: 100px;"></a>
+        <a onclick='location.href = "/";'><img src="dronecare.jpg" alt="Logo" class="header-logo" style="max-height: 100px;"></a>
         <p>Tagline?</p>
     </section>
 
