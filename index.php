@@ -53,7 +53,7 @@ if ($category_id !== 'All') {
             <div class="collapse navbar-collapse show justify-content-center" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class='nav-link px-3 user-select-none' href="/">Home</a>
+                        <a class='nav-link px-3 user-select-none <?= ($_SERVER['REQUEST_URI'] == "/") ? "hover" : "" ?>' href="/">Home</a>
                     </li>
                     <?php if ($show_all) : ?>
                         <li class="nav-item">
