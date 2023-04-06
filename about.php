@@ -59,7 +59,7 @@ if ($category_id !== 'All') {
                     <?php endif; ?>
                     <?php foreach ($subcategories as $subcategory) : ?>
                         <li class="nav-item">
-                            <a class='nav-link px-3 <?= isset($_GET['category_id']) ? "user-select-none" : "" ?>' data-id="<?= $subcategory['id']; ?>" <?= !isset($_GET['category_id']) ? "href='?category_id=" . $subcategory['id'] . "'" : "" ?>><?= $subcategory['name']; ?></a>
+                            <a class='nav-link px-3 <?= isset($_GET['category_id']) ? "user-select-none" : "" ?>' data-id="<?= $subcategory['id']; ?>" <?= !isset($_GET['category_id']) ? "href='/?category_id=" . $subcategory['id'] . "'" : "" ?>><?= $subcategory['name']; ?></a>
                         </li>
                     <?php endforeach; ?>
                     <?php if (!isset($_GET['category_id'])) : ?>
