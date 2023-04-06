@@ -62,9 +62,11 @@ if ($category_id !== 'All') {
                             <a class='nav-link px-3 <?= isset($_GET['category_id']) ? "user-select-none" : "" ?>' data-id="<?= $subcategory['id']; ?>" <?= !isset($_GET['category_id']) ? "href='?category_id=" . $subcategory['id'] . "'" : "" ?>><?= $subcategory['name']; ?></a>
                         </li>
                     <?php endforeach; ?>
-                    <li class="nav-item">
-                        <a class='nav-link px-3 <?= ($_SERVER['REQUEST_URI'] === '/about.php') ? "user-select-none" : "" ?>' href='about.php'>About</a>
-                    </li>
+                    <?php if (!isset($_GET['category_id'])) : ?>
+                        <li class="nav-item">
+                            <a class='nav-link px-3 <?= ($_SERVER['REQUEST_URI'] === '/about.php') ? "user-select-none" : "" ?>' href='about.php'>About Us</a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
