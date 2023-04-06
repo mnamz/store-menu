@@ -52,6 +52,9 @@ if ($category_id !== 'All') {
             </button>
             <div class="collapse navbar-collapse show justify-content-center" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class='nav-link px-3 user-select-none' href="/">Home</a>
+                    </li>
                     <?php if ($show_all) : ?>
                         <li class="nav-item">
                             <a class='nav-link px-3 user-select-none' data-id="All">All</a>

@@ -52,6 +52,9 @@ if ($category_id !== 'All') {
             </button>
             <div class="collapse navbar-collapse show justify-content-center" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class='nav-link px-3 user-select-none' href="/">Home</a>
+                    </li>
                     <?php if ($show_all) : ?>
                         <li class="nav-item">
                             <a class='nav-link px-3 user-select-none' data-id="All">All</a>
@@ -89,14 +92,14 @@ if ($category_id !== 'All') {
 
             📲Steven Liew
             <address>
-            +601162303363 <br>
-            Whatapps: <a style="color:black" href='https://api.whatsapp.com/send?phone=601162303363'>Click here</a> <br>
+                +601162303363 <br>
+                Whatapps: <a style="color:black" href='https://api.whatsapp.com/send?phone=601162303363'>Click here</a> <br>
             </address>
 
             📲Brandon Foo
             <address>
-            +601115555520 <br>
-            Whatapps: <a style="color:black" href='https://api.whatsapp.com/send?phone=601115555520'>Click here</a> <br>
+                +601115555520 <br>
+                Whatapps: <a style="color:black" href='https://api.whatsapp.com/send?phone=601115555520'>Click here</a> <br>
             </address>
         </div>
     </section>
