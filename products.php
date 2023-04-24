@@ -116,7 +116,6 @@ $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <?php include_once 'templates/footer.php'; ?>
 
-
 <script>
     $(document).ready(function() {
         fetchData();
