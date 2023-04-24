@@ -84,6 +84,14 @@ include_once 'db.php';
 								<p>Menu List</p>
 							</a>
 						</li>
+
+						<!-- Menu List -->
+						<li class="nav-item">
+							<a href="options.php" class="nav-link">
+								<i class="nav-icon fas fa-image"></i>
+								<p>Banner Option</p>
+							</a>
+						</li>
 					</ul>
 				</nav>
 				<!-- /.sidebar-menu -->
