@@ -27,6 +27,7 @@ $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         $colors = array("#4F7CAC", "#2C699A", "#1E4D6D", "#0D2C54", "#0C1C36");
                         $random_color = $colors[array_rand($colors)];
                         echo '<a class="grid-item grid-item-2 position-relative rounded mt-0 d-flex" href="products-menu.php?category=' . $category['id'] . '" style="background-color: ' . $random_color . '">';
+                        echo '<img class="banner-img" style="opacity:0;" src="assets/img/banner/bag-5.jpg" alt="banner-1">';
                         echo '<div class="content-absolute content-slide">';
                         echo '<div class="container height-inherit d-flex">';
                         echo '<div class="content-box banner-content p-4">';
