@@ -95,7 +95,7 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
                                 <div class="product-card-details text-center">
                                     <h3 class="product-card-title"><a href="collection-left-sidebar.html"><?= $row['name']; ?></a></h3>
                                     <div class="product-card-price">
-                                        <span class="card-price-regular"><?= '$' . $row['price']; ?></span>
+                                        <span class="card-price-regular"><?= 'RM' . $row['price']; ?></span>
                                     </div>
                                 </div>
                             </div>
