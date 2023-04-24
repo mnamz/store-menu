@@ -64,6 +64,10 @@ $page = 'Options - Banner';
                                     <input type="text" class="form-control" id="cta_text" name="cta_text" value="Click here" disabled>
                                 </div>
                                 <div class="form-group">
+                                    <label for="cta-text">CTA Link:</label>
+                                    <input type="text" class="form-control" id="cta_link" name="cta_link" placeholder="Input URL" disabled>
+                                </div>
+                                <div class="form-group">
                                     <label for="cta-position">CTA Position:</label>
                                     <select class="form-control" id="cta_position" name="cta_position" disabled>
                                         <option value="left">Left</option>
@@ -133,6 +137,7 @@ $page = 'Options - Banner';
                 $('#title').prop('disabled', true);
                 $('#subtitle').prop('disabled', true);
                 $('#cta_text').prop('disabled', true);
+                $('#cta_link').prop('disabled', true);
                 $('#cta_position').prop('disabled', true);
                 $("#title").val(data.title);
                 $("#subtitle").val(data.subtitle);
@@ -143,6 +148,7 @@ $page = 'Options - Banner';
                 $('#title').prop('disabled', false);
                 $('#subtitle').prop('disabled', false);
                 $('#cta_text').prop('disabled', false);
+                $('#cta_link').prop('disabled', false);
                 $('#cta_position').prop('disabled', false);
                 $("#title").val(data.title);
                 $("#subtitle").val(data.subtitle);
@@ -183,6 +189,7 @@ $page = 'Options - Banner';
                     $("#title").val('');
                     $("#subtitle").val('');
                     $("#cta_text").val('');
+                    $("#cta_link").val('');
                     $("#cta_position").val('left');
                     $("#cta_color").val('black');
                     $('#title').prop('disabled', true);
@@ -222,12 +229,14 @@ $page = 'Options - Banner';
                     $('#title').prop('disabled', true);
                     $('#subtitle').prop('disabled', true);
                     $('#cta_text').prop('disabled', true);
+                    $('#cta_link').prop('disabled', true);
                     $('#cta_position').prop('disabled', true);
                     $('#cta_color').prop('disabled', true);
                 } else {
                     $('#title').prop('disabled', false);
                     $('#subtitle').prop('disabled', false);
                     $('#cta_text').prop('disabled', false);
+                    $('#cta_link').prop('disabled', false);
                     $('#cta_position').prop('disabled', false);
                     $('#cta_color').prop('disabled', false);
                 }
@@ -239,6 +248,7 @@ $page = 'Options - Banner';
                 $("#subtitle").val(data.subtitle);
                 $("#cta").val(data.cta);
                 $("#cta_text").val(data.cta_text);
+                $("#cta_link").val(data.cta_link);
                 $("#cta_position").val(data.cta_position);
                 $("#cta_color").val(data.cta_color);
                 $("#form-header").removeClass("card-success").addClass("card-warning");
@@ -263,6 +273,7 @@ $page = 'Options - Banner';
         $('#title').prop('disabled', true);
         $('#subtitle').prop('disabled', true);
         $('#cta_text').prop('disabled', true);
+        $('#cta_link').prop('disabled', true);
         $('#cta_position').prop('disabled', true);
         $('#cta_color').prop('disabled', true);
         $("#form-header").removeClass("card-warning").addClass("card-success");

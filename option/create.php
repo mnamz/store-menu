@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $_POST["title"];
     $subtitle = $_POST["subtitle"];
     $cta_text = $_POST["cta_text"];
+    $cta_link = $_POST["cta_link"];
     $cta_position = $_POST["cta_position"];
     $cta_color = $_POST["cta_color"];
     $image = $_FILES["image"];
@@ -70,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         if (empty($id)) {
-            $sql = "INSERT INTO promo (name, description, image_url, title, subtitle, cta, cta_text, cta_position, cta_color) VALUES (:name, :description, :image_url, :title, :subtitle, :cta, :cta_text, :cta_position, :cta_color)";
+            $sql = "INSERT INTO promo (name, description, image_url, title, subtitle, cta, cta_text, cta_link, cta_position, cta_color) VALUES (:name, :description, :image_url, :title, :subtitle, :cta, :cta_text, :cta_link, :cta_position, :cta_color)";
             $stmt = $pdo->prepare($sql);
             $stmt->execute([
                 "name" => $name,
@@ -79,12 +80,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 "subtitle" => $subtitle,
                 "cta" => $cta,
                 "cta_text" => $cta_text,
+                "cta_link" => $cta_link,
                 "cta_position" => $cta_position,
                 "cta_color" => $cta_color,
                 "image_url" => $image_url ?? null,
             ]);
         } else {
-            $sql = "UPDATE promo SET name = :name, description = :description, title = :title, subtitle = :subtitle, cta = :cta, cta_text = :cta_text, cta_position = :cta_position, cta_color = :cta_color";
+            $sql = "UPDATE promo SET name = :name, description = :description, title = :title, subtitle = :subtitle, cta = :cta, cta_text = :cta_text, cta_link = :cta_link, cta_position = :cta_position, cta_color = :cta_color";
             $values = [
                 "name" => $name,
                 "description" => $description,
@@ -92,6 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 "subtitle" => $subtitle,
                 "cta" => $cta,
                 "cta_text" => $cta_text,
+                "cta_link" => $cta_link,
                 "cta_position" => $cta_position,
                 "cta_color" => $cta_color,
             ];
