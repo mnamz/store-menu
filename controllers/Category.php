@@ -21,6 +21,12 @@ class Category {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public static function getPromoHome() {
+        $stmt = self::$pdo->prepare("SELECT * FROM promo");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 
 Category::init();

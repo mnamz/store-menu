@@ -1,15 +1,15 @@
 <?php
-// database connection
-$dsn = "mysql:host=localhost;dbname=store-menu;charset=utf8mb4";
-$username = "root";
-$password = "";
-$options = [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES => false,
-];
+
+$db_host = 'localhost';
+$db_name = 'store-menu';
+$db_user = 'root';
+$db_pass = '';
+$dsn = "mysql:host=$db_host;dbname=$db_name;charset=utf8mb4";
+
 try {
-    $pdo = new PDO($dsn, $username, $password, $options);
-} catch (\PDOException $e) {
-    throw new \PDOException($e->getMessage(), (int)$e->getCode());
+    $pdo = new PDO($dsn, $db_user, $db_pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo "Error connecting to database: " . $e->getMessage();
+    exit();
 }

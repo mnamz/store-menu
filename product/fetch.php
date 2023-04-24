@@ -13,6 +13,7 @@ foreach ($data as $row) {
         "price" => $row['price'],
         "description" => $row['description'],
         "category_id" => $row['category_id'],
+        "featured" => $row['featured'],
         "image" => $image
     );
 }

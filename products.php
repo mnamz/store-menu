@@ -7,7 +7,6 @@ $stmt = $pdo->query("SELECT id, name FROM categories");
 $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
-
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <section class="content-header">
@@ -90,7 +89,7 @@ $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <div class="card">
                         <div class="card-body" style="overflow-x: auto;">
                             <h5 class="card-title border-bottom mb-4">List</h5>
-                            <div class="table-body" >
+                            <div class="table-body">
                                 <table class="table" id="product-list">
                                     <thead>
                                         <tr>
@@ -99,6 +98,7 @@ $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                             <th>Price</th>
                                             <th>Description</th>
                                             <th>Image</th>
+                                            <th>Featured</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -115,6 +115,7 @@ $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </div><!-- /.content-wrapper -->
 
 <?php include_once 'templates/footer.php'; ?>
+
 
 <script>
     $(document).ready(function() {
@@ -222,6 +223,31 @@ $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
         });
     });
 
+    $(document).on("click", ".featuredBtn", function() {
+        var productId = $(this).data('id');
+        var featured = $(this).hasClass('btn-success') ? 0 : 1;
+        var button = $(this);
+
+        $.ajax({
+            url: 'product/featured.php',
+            type: 'POST',
+            data: {
+                id: productId,
+                featured: featured
+            },
+            success: function(response) {
+                console.log('test')
+                if (featured) {
+                    button.removeClass('btn-primary').addClass('btn-success').text('Yes');
+                } else {
+                    button.removeClass('btn-success').addClass('btn-primary').text('No');
+                }
+            },
+            error: function() {
+                console.log('An error occurred while updating the featured status.');
+            }
+        });
+    });
 
     $(document).on("click", "#cancelBtn", function() {
         $("#id").val('');
@@ -307,16 +333,28 @@ $categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 var table = $('#product-list').DataTable();
                 table.clear();
                 $.each(data, function(index, row) {
+                    var featuredBtn = '';
+                    if (row.featured == '1') {
+                        featuredBtn = '<button class="featuredBtn btn btn-success" data-id="' + row.id + '">Yes</button>';
+                    } else {
+                        featuredBtn = '<button class="featuredBtn btn btn-primary" data-id="' + row.id + '">No</button>';
+                    }
                     table.row.add([
                         row.id,
                         row.name,
                         row.price,
                         row.description,
                         '<img src="' + row.image + '" width="50" height="50">',
+                        featuredBtn,
                         '<button class="editBtn btn btn-primary" data-id="' + row.id + '">Edit</button> <button class="deleteBtn btn btn-danger" data-id="' + row.id + '">Delete</button>'
                     ]);
                 });
                 table.draw();
+
+                // Add click event listener for featured button
+
+
+
             }
         });
     }
