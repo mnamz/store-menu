@@ -29,8 +29,8 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
     $pos = ($ctaPosition == 'left') ? '' : 'justify-content-end';
 
     $slideItemsHtml .= '<div class="slide-item slide-item-bag position-relative">';
-    $slideItemsHtml .= '<img class="slide-img d-none d-md-block" src="' . $imageUrl . '" alt="slide-' . $n . '">';
-    $slideItemsHtml .= '<img class="slide-img d-md-none" src="' . $imageUrl . '" alt="slide-' . $n . '">';
+    $slideItemsHtml .= '<img class="slide-img d-none d-md-block w-100" src="' . $imageUrl . '" alt="slide-' . $n . '">';
+    $slideItemsHtml .= '<img class="slide-img d-md-none w-100" src="' . $imageUrl . '" alt="slide-' . $n . '">';
     $slideItemsHtml .= '<div class="content-absolute content-slide">';
     $slideItemsHtml .= '<div class="container height-inherit d-flex align-items-center ' . $pos . '">';
     $slideItemsHtml .= '<div class="content-box slide-content py-4">';
