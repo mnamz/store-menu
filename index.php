@@ -18,36 +18,36 @@ $n = 1;
 ?>
 
 <?php
-            while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
-                $imageUrl = htmlspecialchars($row['image_url']);
-                $title = htmlspecialchars($row['title']);
-                $subtitle = htmlspecialchars($row['subtitle']);
-                $cta_color = htmlspecialchars($row['cta_color']);
-                $cta = intval($row['cta']);
-                $ctaText = $cta ? htmlspecialchars($row['cta_text']) : '';
-                $ctaPosition = $cta ? htmlspecialchars($row['cta_position']) : '';
-                $pos = ($ctaPosition == 'left') ? '' : 'justify-content-end';
+while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+    $imageUrl = htmlspecialchars($row['image_url']);
+    $title = htmlspecialchars($row['title']);
+    $subtitle = htmlspecialchars($row['subtitle']);
+    $cta_color = htmlspecialchars($row['cta_color']);
+    $cta = intval($row['cta']);
+    $ctaText = $cta ? htmlspecialchars($row['cta_text']) : '';
+    $ctaPosition = $cta ? htmlspecialchars($row['cta_position']) : '';
+    $pos = ($ctaPosition == 'left') ? '' : 'justify-content-end';
 
-                $slideItemsHtml .= '<div class="slide-item slide-item-bag position-relative">';
-                $slideItemsHtml .= '<img class="slide-img d-none d-md-block" src="' . $imageUrl . '" alt="slide-' . $n . '">';
-                $slideItemsHtml .= '<img class="slide-img d-md-none" src="' . $imageUrl . '" alt="slide-' . $n . '">';
-                $slideItemsHtml .= '<div class="content-absolute content-slide">';
-                $slideItemsHtml .= '<div class="container height-inherit d-flex align-items-center ' . $pos . '">';
-                $slideItemsHtml .= '<div class="content-box slide-content py-4">';
-                $slideItemsHtml .= '<p style="color:' . $cta_color . ';" class="slide-text heading_24 animate__animated animate__fadeInUp" data-animation="animate__animated animate__fadeInUp">';
-                $slideItemsHtml .= $title;
-                $slideItemsHtml .= '</p>';
-                $slideItemsHtml .= '<h2 style="color:' . $cta_color . ';" class="slide-heading heading_72 animate__animated animate__fadeInUp" data-animation="animate__animated animate__fadeInUp">';
-                $slideItemsHtml .= $subtitle;
-                $slideItemsHtml .= '</h2>';
-                if ($cta) {
-                    $slideItemsHtml .= '<a class="btn-primary slide-btn animate__animated animate__fadeInUp" href="' . $ctaPosition . '" data-animation="animate__animated animate__fadeInUp">' . $ctaText . '</a>';
-                }
-                $slideItemsHtml .= '</div></div></div></div>';
-                $n++;
-            }
-            
-            ?>
+    $slideItemsHtml .= '<div class="slide-item slide-item-bag position-relative">';
+    $slideItemsHtml .= '<img class="slide-img d-none d-md-block" src="' . $imageUrl . '" alt="slide-' . $n . '">';
+    $slideItemsHtml .= '<img class="slide-img d-md-none" src="' . $imageUrl . '" alt="slide-' . $n . '">';
+    $slideItemsHtml .= '<div class="content-absolute content-slide">';
+    $slideItemsHtml .= '<div class="container height-inherit d-flex align-items-center ' . $pos . '">';
+    $slideItemsHtml .= '<div class="content-box slide-content py-4">';
+    $slideItemsHtml .= '<p style="color:' . $cta_color . ';" class="slide-text heading_24 animate__animated animate__fadeInUp" data-animation="animate__animated animate__fadeInUp">';
+    $slideItemsHtml .= $title;
+    $slideItemsHtml .= '</p>';
+    $slideItemsHtml .= '<h2 style="color:' . $cta_color . ';" class="slide-heading heading_72 animate__animated animate__fadeInUp" data-animation="animate__animated animate__fadeInUp">';
+    $slideItemsHtml .= $subtitle;
+    $slideItemsHtml .= '</h2>';
+    if ($cta) {
+        $slideItemsHtml .= '<a class="btn-primary slide-btn animate__animated animate__fadeInUp" href="' . $ctaPosition . '" data-animation="animate__animated animate__fadeInUp">' . $ctaText . '</a>';
+    }
+    $slideItemsHtml .= '</div></div></div></div>';
+    $n++;
+}
+
+?>
 
 <main id="MainContent" class="content-for-layout">
     <!-- slideshow start -->
@@ -66,7 +66,7 @@ $n = 1;
                         }
                     ]
                 }'>
-            
+
             <?php echo $slideItemsHtml; ?>
         </div>
         <div class="activate-arrows"></div>
@@ -120,6 +120,7 @@ $n = 1;
                         $colors = array("#4F7CAC", "#2C699A", "#1E4D6D", "#0D2C54", "#0C1C36");
                         $random_color = $colors[array_rand($colors)];
                         echo '<a class="grid-item grid-item-2 position-relative rounded mt-0 d-flex" href="products-menu.php?category=' . $category['id'] . '" style="background-color: ' . $random_color . '">';
+                        echo '<img class="banner-img" style="opacity:0;" src="assets/img/banner/bag-5.jpg" alt="banner-1">';
                         echo '<div class="content-absolute content-slide">';
                         echo '<div class="container height-inherit d-flex">';
                         echo '<div class="content-box banner-content p-4">';
@@ -133,6 +134,8 @@ $n = 1;
                         echo '</a>';
                     }
                     ?>
+
+                   
                 </div>
             </div>
         </div>
