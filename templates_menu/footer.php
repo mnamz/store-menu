@@ -9,16 +9,16 @@
             <nav class="site-navigation">
                 <ul class="main-menu list-unstyled">
                     <li class="menu-list-item nav-item">
-                        <a class="nav-link" href="contact.html">Home</a>
+                        <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="menu-list-item nav-item">
-                        <a class="nav-link" href="contact.html">Categories</a>
+                        <a class="nav-link" href="products-menu.php">Products</a>
                     </li>
                     <li class="menu-list-item nav-item">
-                        <a class="nav-link" href="contact.html">All Products</a>
+                        <a class="nav-link" href="list.php">Categories</a>
                     </li>
                     <li class="menu-list-item nav-item">
-                        <a class="nav-link" href="contact.html">Contact Us</a>
+                        <a class="nav-link" href="contact.php">Contact</a>
                     </li>
                 </ul>
             </nav>
@@ -43,22 +43,22 @@
                                 </span>
                             </h4>
                             <ul class="footer-menu list-unstyled mb-0 d-md-block">
-                                <li class="footer-menu-item"><a href="about-us.html">Products</a></li>
-                                <li class="footer-menu-item"><a href="about-us.html">Categories</a></li>
-                                <li class="footer-menu-item"><a href="blog.html">Contact Us</a></li>
+                                <li class="footer-menu-item"><a href="products-menu.php">Products</a></li>
+                                <li class="footer-menu-item"><a href="list.php">Categories</a></li>
+                                <li class="footer-menu-item"><a href="contact.php">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-5 col-md-6 col-12 footer-widget">
+                    <!-- <div class="col-xl-4 col-lg-5 col-md-6 col-12 footer-widget">
                         <div class="footer-widget-inner">
                             <h4 class="footer-logo">
-                                <a href="/"><img src="assets/img/logo-white.png" alt="bisum"></a>
+                                <a href="/"><img src="dronecare.jpg" alt="Dronecare"></a>
                             </h4>
                             <div class="footer-newsletter">
                                 <p class="footer-text mb-3">Stay up to date with all the news.</p>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -66,11 +66,11 @@
     <div class="footer-bottom bg-4">
         <div class="container">
             <div class="footer-bottom-inner d-flex flex-wrap justify-content-md-between justify-content-center align-items-center">
-                <ul class="footer-bottom-menu list-unstyled d-flex flex-wrap align-items-center mb-0">
+                <!-- <ul class="footer-bottom-menu list-unstyled d-flex flex-wrap align-items-center mb-0">
                     <li class="footer-menu-item"><a href="about-us.html">Privacy policy</a></li>
                     <li class="footer-menu-item"><a href="about-us.html">Terms & Conditions</a></li>
                 </ul>
-                <p class="copyright footer-text">©<span class="current-year"></span> Spree Themes.</p>
+                <p class="copyright footer-text">©<span class="current-year"></span> Spree Themes.</p> -->
             </div>
         </div>
     </div>

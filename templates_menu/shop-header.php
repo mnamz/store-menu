@@ -2,13 +2,13 @@
 <html lang="en" class="no-js">
 
 <head>
-    <title>Bisum - eCommerce Bootstrap 5 Template</title>
+    <title>Dronecare</title>
     <!-- meta tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="meta description">
-    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="" type="image/x-icon">
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,25 +16,25 @@
     <!-- all css -->
     <style>
         :root {
-            --primary-color: #F76B6A;
-            --secondary-color: #F0686E;
+            --primary-color: #4a7ab5;
+            --secondary-color: #2b4769;
 
             --btn-primary-border-radius: 0.25rem;
             --btn-primary-color: #fff;
-            --btn-primary-background-color: #F76B6A;
-            --btn-primary-border-color: #F76B6A;
+            --btn-primary-background-color: #4a7ab5;
+            --btn-primary-border-color: #4a7ab5;
             --btn-primary-hover-color: #fff;
-            --btn-primary-background-hover-color: #F0686E;
-            --btn-primary-border-hover-color: #F0686E;
+            --btn-primary-background-hover-color: #2b4769;
+            --btn-primary-border-hover-color: #2b4769;
             --btn-primary-font-weight: 500;
 
             --btn-secondary-border-radius: 0.25rem;
-            --btn-secondary-color: #F76B6A;
+            --btn-secondary-color: #4a7ab5;
             --btn-secondary-background-color: transparent;
-            --btn-secondary-border-color: #F76B6A;
+            --btn-secondary-border-color: #4a7ab5;
             --btn-secondary-hover-color: #fff;
-            --btn-secondary-background-hover-color: #F0686E;
-            --btn-secondary-border-hover-color: #F0686E;
+            --btn-secondary-background-hover-color: #2b4769;
+            --btn-secondary-border-hover-color: #2b4769;
             --btn-secondary-font-weight: 500;
 
             --heading-color: #000;
@@ -78,7 +78,7 @@
                         <div class="col-lg-3 col-md-4 col-4">
                             <div class="header-logo">
                                 <a href="index-bag.html" class="logo-main">
-                                    <img class="main-logo" src="assets/img/dronecare.jpg" loading="lazy" alt="bisum">
+                                    <img class="main-logo" src="assets/img/dronecare.jpg" loading="lazy" alt="dronecare">
                                 </a>
                             </div>
                         </div>
@@ -86,21 +86,22 @@
                             <nav class="site-navigation">
                                 <ul class="main-menu list-unstyled justify-content-center">
                                     <li class="menu-list-item nav-item">
-                                        <a class="nav-link" href="contact.html">Home</a>
+                                        <a class="nav-link" href="/">Home</a>
                                     </li>
                                     <li class="menu-list-item nav-item">
-                                        <a class="nav-link" href="contact.html">Products</a>
+                                        <a class="nav-link" href="products-menu.php">Products</a>
                                     </li>
                                     <li class="menu-list-item nav-item">
-                                        <a class="nav-link" href="contact.html">Categories</a>
+                                        <a class="nav-link" href="list.php">Categories</a>
                                     </li>
                                     <li class="menu-list-item nav-item">
-                                        <a class="nav-link" href="contact.html">Contact</a>
+                                        <a class="nav-link" href="contact.php">Contact</a>
                                     </li>
                                 </ul>
                             </nav>
                         </div>
-                        <div class="col-lg-3 col-md-8 col-8">
+                        <div class="col-lg-3 col-md-8 col-8 d-none"> 
+                            <!-- not doing search function because too much effort for this  -->
                             <div class="header-action d-flex align-items-center justify-content-end">
                                 <a class="header-action-item header-search" href="javascript:void(0)">
                                     <svg class="icon icon-search" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
