@@ -22,6 +22,7 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
     $imageUrl = htmlspecialchars($row['image_url']);
     $title = htmlspecialchars($row['title']);
     $subtitle = htmlspecialchars($row['subtitle']);
+    $cta_link = htmlspecialchars($row['cta_link']);
     $cta_color = htmlspecialchars($row['cta_color']);
     $cta = intval($row['cta']);
     $ctaText = $cta ? htmlspecialchars($row['cta_text']) : '';
@@ -41,7 +42,7 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
     $slideItemsHtml .= $subtitle;
     $slideItemsHtml .= '</h2>';
     if ($cta) {
-        $slideItemsHtml .= '<a class="btn-primary slide-btn animate__animated animate__fadeInUp" href="' . $ctaPosition . '" data-animation="animate__animated animate__fadeInUp">' . $ctaText . '</a>';
+        $slideItemsHtml .= '<a class="btn-primary slide-btn animate__animated animate__fadeInUp" href="' . $cta_link . '" data-animation="animate__animated animate__fadeInUp">' . $ctaText . '</a>';
     }
     $slideItemsHtml .= '</div></div></div></div>';
     $n++;
