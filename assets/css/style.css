@@ -4055,12 +4055,14 @@ blockquote {
   z-index: -1;
 }
 
+.primary-img {
+  min-height: 150px !important;
+  object-fit: cover;
+  max-height: 300px;
+}
+
 .text_12 {
   color: #fff;
 }
 
-.primary-img {
-  min-height: 150px;
-  object-fit: cover;
-  max-height: 300px;
-}
+
