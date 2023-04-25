@@ -511,7 +511,7 @@ button,
     -webkit-transition: all 0.7s ease;
     -o-transition: all 0.7s ease;
     transition: all 0.7s ease;
-    min-height: 300px;
+    min-height: 150px;
     object-fit: cover;
     max-height: 300px;
   }
