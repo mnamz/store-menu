@@ -512,7 +512,7 @@ button,
     -o-transition: all 0.7s ease;
     transition: all 0.7s ease;
     min-height: 150px;
-    object-fit: cover;
+    object-fit: fill;
     max-height: 300px;
   }
 
@@ -4056,8 +4056,8 @@ blockquote {
 }
 
 .primary-img {
-  min-height: 150px !important;
-  object-fit: cover;
+  min-height: 150px;
+  object-fit: fill;
   max-height: 300px;
 }
 
