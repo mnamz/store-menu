@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Resize and save the image
             $target_file = "../uploads/" . basename($image);
             $new_image = imagecreatefromstring(file_get_contents($_FILES["image"]["tmp_name"]));
-            $resized_image = imagescale($new_image, 1920, 1080, IMG_BICUBIC_FIXED);
+            $resized_image = imagescale($new_image, 1024, 1024, IMG_BICUBIC_FIXED);
             imagejpeg($resized_image, $target_file);
             imagedestroy($new_image);
             imagedestroy($resized_image);
