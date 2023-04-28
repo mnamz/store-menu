@@ -4034,9 +4034,16 @@ blockquote {
   .main-logo {
     max-width: 60% !important;
     margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin-top: .75rem;
+    max-height: 100px !important;
   }
 }
+
+@media (max-width: 768px) { 
+  .main-logo {
+    max-width: 100px;
+}
+
 
 .heading_18 {
   position: relative;
