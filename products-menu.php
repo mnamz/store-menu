@@ -213,11 +213,14 @@ include_once 'templates_menu/footer.php';
         const urlParams = new URLSearchParams(window.location.search);
         const category = urlParams.get('category');
         const subcategory = urlParams.get('subcategory');
+        const productContainer = document.getElementById('footer-container');
 
         loadProducts(offset, limit, category, subcategory);
-        $(window).scroll(function() {
-            if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-                // If the user has scrolled to the bottom of the page, load the next set of products
+        // Add an event listener to the window object that triggers when the user scrolls
+        window.addEventListener('scroll', () => {
+            // Check if the user has scrolled to the product container
+            if (window.pageYOffset + window.innerHeight >= productContainer.offsetTop) {
+                // If the user has scrolled to the product container, load the next set of products
                 offset += limit;
                 loadProducts(offset, limit, category, subcategory);
             }

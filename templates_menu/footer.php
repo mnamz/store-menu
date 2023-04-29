@@ -27,7 +27,7 @@
 </div>
 <!-- drawer menu end -->
 <!-- footer start -->
-<footer class="mt-100 overflow-hidden">
+<footer id="footer-container" class="mt-100 overflow-hidden">
     <div class="footer-top bg-4">
         <div class="container">
             <div class="footer-widget-wrapper">
